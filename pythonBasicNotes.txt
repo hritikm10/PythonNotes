@@ -14,6 +14,7 @@ print(y)
 print(z)
 
 #All Data Types
+---------------------------------
 x = "Hello World" ->	str
 x = 20	->  int
 x = 20.5  -> 	float
@@ -32,6 +33,7 @@ x = None  ->	NoneType
 
 
 #Important String Functions
+---------------------------------
 The upper() method returns the string in upper case:
 The lower() method returns the string in lower case:
 The strip() method removes any whitespace from the beginning or the end:
@@ -43,6 +45,7 @@ More - https://www.w3schools.com/python/python_strings_methods.asp
 
 
 #Important List Functions
+---------------------------------
 To add an item to the end of the list, use the append() method:
 To insert a list item at a specified index, use the insert() method.
 To append elements from another list to the current list, use the extend() method.
@@ -56,11 +59,13 @@ You can use the built-in List method copy() to copy a list.
 
 
 #Important Tuple Functions
+---------------------------------
 count()	Returns the number of times a specified value occurs in a tuple
 index()	Searches the tuple for a specified value and returns the position of where it was found
 
 
 #Important Set Functions
+---------------------------------
 add()	 	Adds an element to the set
 clear()	 	Removes all the elements from the set
 copy()	 	Returns a copy of the set
@@ -82,6 +87,7 @@ update()		Update the set with the union of this set and others
 
 
 #Important Dictionary Functions
+---------------------------------
 clear()	Removes all the elements from the dictionary
 copy()	Returns a copy of the dictionary
 fromkeys()	Returns a dictionary with the specified keys and value
@@ -97,6 +103,7 @@ values()	Returns a list of all the values in the dictionary
 
 
 #Lamba Function
+---------------------------------
 A lambda function can take any number of arguments, but can only have one expression.
 lambda arguments : expression
 x = lambda a : a + 10
@@ -106,6 +113,7 @@ Output = 15
 
 
 #The __init__() Function
+---------------------------------
 All classes have a function called __init__(), which is always executed when the class is being initiated.
 Use the __init__() function to assign values to object properties, or other operations that are necessary to do when the object is being created:
 
@@ -121,6 +129,7 @@ print(p1.age)
 
 
 #Inheritance Class Polymorphism
+---------------------------------
 What about classes with child classes with the same name? Can we use polymorphism there?
 
 Yes. If we use the example above and make a parent class called Vehicle, and make Car, Boat, Plane child classes of Vehicle, the child classes inherits the Vehicle methods, but can override them:
@@ -175,6 +184,7 @@ Because of polymorphism we can execute the same method for all classes.
 
 
 #DateTime Module
+---------------------------------
 import datetime
 x = datetime.datetime.now()
 OUTPUT FORMAT - 2025-02-17 00:06:10.062086
@@ -231,6 +241,7 @@ June
 
 
 #Math Module
+---------------------------------
 The min() and max() functions can be used to find the lowest or highest value in an iterable
 The abs() function returns the absolute (positive) value of the specified number
 The pow(x, y) function returns the value of x to the power of y (xy)
@@ -244,6 +255,7 @@ The math.pi constant, returns the value of PI (3.14...)
 
 
 #Python JSON
+---------------------------------
 If you have a JSON string, you can parse it by using the json.loads() method.
 If you have a Python object, you can convert it into a JSON string by using the json.dumps() method.
 
@@ -253,6 +265,7 @@ If you have a Python object, you can convert it into a JSON string by using the 
 
 
 #RegEx Module
+---------------------------------
 A RegEx, or Regular Expression, is a sequence of characters that forms a search pattern.
 RegEx can be used to check if a string contains the specified search pattern.
 import re
@@ -310,6 +323,7 @@ $	Ends with	"planet$"
 
 
 #Python File Handling
+---------------------------------
 The key function for working with files in Python is the open() function.
 The open() function takes two parameters; filename, and mode.
 "r" - Read - Default value. Opens a file for reading, error if the file does not exist
@@ -318,7 +332,6 @@ The open() function takes two parameters; filename, and mode.
 "x" - Create - Creates the specified file, returns an error if the file exists
 "t" - Text - Default value. Text mode
 "b" - Binary - Binary mode (e.g. images)
-
 
 f = open("demofile3.txt", "w")
 f.write("Woops! I have deleted the content!")
@@ -340,6 +353,7 @@ To delete an entire folder, use the os.rmdir() method
 
 
 #More Notes when needed
+---------------------------------
 
 
 
