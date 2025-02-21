@@ -329,3 +329,107 @@ OUTPUT : [41 43]
 
 
 
+
+#NumPy ufuncs
+---------------------------------
+ufuncs are used to implement vectorization in NumPy which is way faster than iterating over elements.
+They also provide broadcasting and additional methods like reduce, accumulate etc. that are very helpful for computation.
+ufuncs also take additional arguments, like:
+
+where - boolean array or condition defining where the operations should take place.
+dtype - defining the return type of elements.
+out - output array where the return value should be copied.
+
+
+#What is Vectorization?
+---------------------------------
+Converting iterative statements into a vector based operation is called vectorization.
+It is faster as modern CPUs are optimized for such operations.
+
+
+Add the Elements of Two Lists
+list 1: [1, 2, 3, 4]
+list 2: [4, 5, 6, 7]
+One way of doing it is to iterate over both of the lists and then sum each elements.
+
+Without ufunc, we can use Python's built-in zip() method:
+x = [1, 2, 3, 4]
+y = [4, 5, 6, 7]
+z = []
+for i, j in zip(x, y):
+  z.append(i + j)
+print(z)
+
+With ufunc, we can use the add() function:
+
+import numpy as np
+x = [1, 2, 3, 4]
+y = [4, 5, 6, 7]
+z = np.add(x, y)
+print(z)
+
+
+
+#Create Your Own ufunc
+---------------------------------
+To create your own ufunc, you have to define a function, like you do with normal functions in Python, then you add it to your NumPy ufunc library with the frompyfunc() method.
+The frompyfunc() method takes the following arguments:
+
+function - the name of the function.
+inputs - the number of input arguments (arrays).
+outputs - the number of output arrays.
+
+import numpy as np
+def myadd(x, y):
+  return x+y
+
+myadd = np.frompyfunc(myadd, 2, 1)
+print(myadd([1, 2, 3, 4], [5, 6, 7, 8]))
+
+
+#Check if a Function is a ufunc
+---------------------------------
+Check the type of a function to check if it is a ufunc or not.
+A ufunc should return <class 'numpy.ufunc'>.
+
+
+
+
+#Simple Arithmetic
+---------------------------------
+The add() function sums the content of two arrays, and return the results in a new array.
+
+The subtract() function subtracts the values from one array with the values from another array, and return the results in a new array.
+
+The multiply() function multiplies the values from one array with the values from another array, and return the results in a new array.
+
+The divide() function divides the values from one array with the values from another array, and return the results in a new array.
+
+The power() function rises the values from the first array to the power of the values of the second array, and return the results in a new array.
+
+Both the mod() and the remainder() functions return the remainder of the values in the first array corresponding to the values in the second array, and return the results in a new array.
+
+The divmod() function return both the quotient and the mod. The return value is two arrays, the first array contains the quotient and second array contains the mod.
+
+Both the absolute() and the abs() functions do the same absolute operation element-wise but we should use absolute() to avoid confusion with python's inbuilt math.abs()
+
+TRemove the decimals, and return the float number closest to zero. Use the trunc() and fix() functions.
+
+The around() function increments preceding digit or decimal by 1 if >=5 else do nothing.
+
+The floor() function rounds off decimal to nearest lower integer.
+
+The ceil() function rounds off decimal to nearest upper integer.
+
+Use the log2() function to perform log at the base 2.
+
+Use the log10() function to perform log at the base 10.
+
+Use the log() function to perform log at the base e.
+
+NumPy does not provide any function to take log at any base, so we can use the frompyfunc() function along with inbuilt function math.log() with two input parameters and one output parameter:
+
+
+
+#NumPy Summations
+---------------------------------
