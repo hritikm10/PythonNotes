@@ -1,0 +1,143 @@
+#What is Pandas?
+------------------------------------
+Pandas is a Python library used for working with data sets.
+It has functions for analyzing, cleaning, exploring, and manipulating data.
+Pandas allows us to analyze big data and make conclusions based on statistical theories.
+Pandas can clean messy data sets, and make them readable and relevant.
+Relevant data is very important in data science.
+
+What Can Pandas Do?
+------------------------------------
+Pandas gives you answers about the data. Like:
+1.Is there a correlation between two or more columns?
+2.What is average value?
+3.Max value?
+4.Min value?
+5.Pandas are also able to delete rows that are not relevant, or contains wrong values, like empty or NULL values. This is called cleaning the data.
+
+
+import pandas as pd
+mydataset = {
+  'cars': ["BMW", "Volvo", "Ford"],
+  'passings': [3, 7, 2]
+}
+myvar = pd.DataFrame(mydataset)
+print(myvar)
+
+OUTPUT :
+    cars  passings
+0    BMW         3
+1  Volvo         7
+2   Ford         2
+
+NOTE: Pandas DataFrame is two-dimensional size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns). A Data frame is a two-dimensional data structure, i.e., data is aligned in a tabular fashion in rows and columns. Pandas DataFrame consists of three principal components, the data, rows, and columns.
+
+
+
+
+
+#What is a Series?
+------------------------------------
+A Pandas Series is like a column in a table.
+It is a one-dimensional array holding data of any type.
+
+#Create a simple Pandas Series from a list:
+import pandas as pd
+a = [1, 7, 2]
+myvar = pd.Series(a)
+print(myvar)
+
+OUTPUT -
+0    1
+1    7
+2    2
+
+
+#With the index argument, you can name your own labels.
+import pandas as pd
+a = [1, 7, 2]
+myvar = pd.Series(a, index = ["x", "y", "z"])
+print(myvar)
+
+OUTPUT -
+x    1
+y    7
+z    2
+
+
+#Key/Value Objects as Series
+------------------------------------
+You can also use a key/value object, like a dictionary, when creating a Series.
+import pandas as pd
+calories = {"day1": 420, "day2": 380, "day3": 390}
+myvar = pd.Series(calories)
+print(myvar)
+
+OUTPUT -
+day1    420
+day2    380
+day3    390
+
+Note: The keys of the dictionary become the labels.
+
+
+
+
+#To select only some of the items in the dictionary, use the index argument and specify only the items you want to include in the Series.
+import pandas as pd
+calories = {"day1": 420, "day2": 380, "day3": 390}
+myvar = pd.Series(calories, index = ["day1", "day2"])
+print(myvar)
+OUTPUT -
+day1    420
+day2    380
+
+
+
+#DataFrames
+------------------------------------
+Data sets in Pandas are usually multi-dimensional tables, called DataFrames.
+Series is like a column, a DataFrame is the whole table.
+
+import pandas as pd
+data = {
+  "calories": [420, 380, 390],
+  "duration": [50, 40, 45]
+}
+myvar = pd.DataFrame(data)
+print(myvar)
+
+OUTPUT -
+   calories  duration
+0       420        50
+1       380        40
+2       390        45
+
+
+
+#Locate Row
+Pandas use the loc attribute to return one or more specified row(s)
+
+1.print(df.loc[0])
+calories    420
+duration     50
+
+2.print(df.loc[[0, 1]])
+calories  duration
+0       420        50
+1       380        40
+
+
+Note: When using [], the result is a Pandas DataFrame.
+
+
+
+
+#Load Files Into a DataFrame
+------------------------------------
+If your data sets are stored in a file, Pandas can load them into a DataFrame.
+
+Load a comma separated file (CSV file) into a DataFrame:
+import pandas as pd
+df = pd.read_csv('data.csv')
+print(df)
